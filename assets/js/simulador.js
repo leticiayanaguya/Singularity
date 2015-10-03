@@ -4,7 +4,7 @@ $(document).ready(function ()
 	/* Estrela tela inicial */
 	$('#estrela').earth3d( 
 	{
-	  texture: 'assets/images/estrelas/mars1024x1024.jpg', // Textura usada na estrela
+	  texture: 'assets/images/estrelas/estrela.jpg', // Textura usada na estrela
 	  dragElement: $('#locations') 
 	});
 	
@@ -13,51 +13,12 @@ $(document).ready(function ()
 	$('#btn_comecar').on('click', function() 
 	{
 		var massa_estrela = $('#massa_estrela').val();
-		
+
 		if(massa_estrela != '') 
 		{
-
 			$('#form_entrada_massa_estrela').fadeOut(); // Esconde entrada de valor da massa
-			$('#estrela').earth3d('destroy');
-			$('#estrela').replaceWith($('<canvas id="estrela" width="400" height="400"></canvas>'));
 
-			// Começa a troca de estágios da estrela
-			// Gigante vermelha
-			$('#estrela').earth3d( 
-			{
-			  texture: 'assets/images/background_space.jpg', // Textura usada na estrela
-			});
-
-			if(massa_estrela < 5 ) 
-			{ // Anã branca
-				$('#estrela').earth3d( 
-				{
-				  texture: 'assets/images/estrelas/gigante_vermelha.jpg', // Textura usada na estrela
-				});
-			} 
-			else if(massa_estrela >= 5) 
-			{// Supernova
-				$('#estrela').earth3d( 
-				{
-				  texture: 'assets/images/estrelas/supernova.jpg', // Textura usada na estrela
-				});
-				
-				var massa_corpo = 0;
-				if(massa_corpo < 2) 
-				{ // Estrela de nêutrons
-					$('#estrela').earth3d( 
-					{
-					  texture: 'assets/images/estrelas/estrela_neutrons.jpg', // Textura usada na estrela
-					});
-				} 
-				else if(massa_corpo > 2) 
-				{// Buraco negro
-					$('#estrela').earth3d( 
-					{
-					  texture: 'assets/images/estrelas/buraco_negro.jpg', // Textura usada na estrela
-					});
-				}
-			}
+			setInterval(set_gigante_vermelha(massa_estrela), 5000);
 		}
 	});
 	
@@ -147,3 +108,82 @@ $(document).ready(function ()
 //	}
 });
 
+function set_gigante_vermelha(massa_estrela) 
+{
+	console.log('Gigante vermelha');
+	$('#estrela').earth3d('destroy');
+	$('#estrela').replaceWith($('<canvas id="estrela" width="500" height="500"></canvas>'));
+
+	// Começa a troca de estágios da estrela
+	// Gigante vermelha
+	$('#estrela').earth3d( 
+	{
+	  texture: 'assets/images/estrelas/gigante_vermelha.jpg', // Textura usada na estrela
+	});
+	
+	if(massa_estrela < 5 ) 
+	{ // Anã branca
+		setInterval(set_ana_branca(massa_estrela), 50);
+	} 
+	else if(massa_estrela >= 5) 
+	{// Supernova
+		setInterval(set_super_nova(massa_estrela), 50);
+	}
+}
+
+function set_ana_branca(massa_estrela) 
+{
+	$('#estrela').earth3d('destroy');
+	$('#estrela').replaceWith($('<canvas id="estrela" width="500" height="500"></canvas>'));
+
+	// Anã branca
+	$('#estrela').earth3d( 
+	{
+	  texture: 'assets/images/estrelas/ana_branca.jpg', // Textura usada na estrela
+	});
+}
+
+function set_super_nova(massa_estrela) 
+{
+	$('#estrela').replaceWith($('<canvas id="estrela" width="400" height="400"></canvas>'));
+
+	// Supernova
+	$('#estrela').earth3d( 
+	{
+	  texture: 'assets/images/estrelas/supernova.jpg', // Textura usada na estrela
+	});
+	
+	var massa_corpo = 0;
+	if(massa_corpo < 2) 
+	{ // Estrela de nêutrons
+		setInterval(set_estrela_neutrons(massa_estrela), 5000);
+	} 
+	else if(massa_corpo > 2) 
+	{// Buraco negro
+		setInterval(set_buraco_negro(massa_estrela), 5000);
+	}
+}
+
+function set_estrela_neutrons(massa_estrela) 
+{
+	$('#estrela').earth3d('destroy');
+	$('#estrela').replaceWith($('<canvas id="estrela" width="400" height="400"></canvas>'));
+
+	// Estrela de nêutrons
+	$('#estrela').earth3d( 
+	{
+	  texture: 'assets/images/estrelas/estrela_neutrons.jpg', // Textura usada na estrela
+	});
+}
+
+function set_buraco_negro(massa_estrela) 
+{
+	$('#estrela').earth3d('destroy');
+	$('#estrela').replaceWith($('<canvas id="estrela" width="500" height="500"></canvas>'));
+
+	// Buraco negro
+	$('#estrela').earth3d( 
+	{
+	  texture: 'assets/images/estrelas/buraco_negro.jpg', // Textura usada na estrela
+	});
+}
