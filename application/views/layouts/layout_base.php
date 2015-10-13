@@ -28,7 +28,7 @@
 
 	<body>
 		<div class="nav-side-menu col-md-2">
-		    <div class="brand">Simulador de Buracos Negros</div>
+		    <div class="brand">Singularidade</div>
 		    <i class="fa fa-bars fa-2x toggle-btn" data-toggle="collapse" data-target="#menu-content"></i>
 		
 		        <div class="menu-list">
@@ -61,7 +61,7 @@
 		                </ul>
 		
 		                 <li>
-			                 <a href="#">
+			                 <a href="creditos">
 			                 	<i class="fa fa-users fa-lg"></i> Créditos
 			                 </a>
 						</li>
@@ -70,13 +70,7 @@
 		</div>
 
 
-		<div class="col-md-8 col-sm-8 col-xs-8 margin-0 padding-0" id="container">
-			<?php echo $content;?>
-		</div>
-	
-		<div class="col-md-2 col-sm-2 col-xs-2 margin-0 padding-0" id="lateral_direita">
-			<div id="timer">00:00:00</div>
-		</div>
+		<?php echo $content;?>
 	</body>
 
     <script type="text/javascript" src="assets/js/requestanimationframe.polyfill.js"></script>
