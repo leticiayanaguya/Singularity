@@ -1,4 +1,4 @@
-<div class="col-md-8 col-sm-8 col-xs-8 margin-0 padding-0" id="container">
+<div class="col-md-8 col-sm-12 col-xs-8 margin-0 padding-0" id="container">
 
 	<div class="col-md-12 col-sm-12 col-xs-12 margin-0 padding-0" id="massa-estrela-home">
 		<div class="row col-md-12 col-sm-12 col-xs-12 margin-0 padding-0" id="conteiner-estrela-home">
