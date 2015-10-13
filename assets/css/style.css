@@ -167,6 +167,10 @@ label {
 	padding: 0 !important;
 }
 
+#menu-content li a {
+    display: block;
+}
+
 /* Timer */
 #timer {
     font-size: 25px;

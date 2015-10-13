@@ -22,9 +22,9 @@ class Home extends CI_Controller
 	public function index()
 	{
 		// Seta título da página
-		$data['title'] = 'Simulador BlackHole';
+		$data['title'] = 'Singularidade';
 		
-		// Carrega layout base e conte�do da homepage
+		// Carrega layout base e conteúdo da homepage
 		$data['content'] = $this->load->view ('home/index', '', true);
 		$this->load->vars ($data);
 		$this->load->view ('layouts/layout_base');

@@ -22,7 +22,7 @@ class Creditos extends CI_Controller
 	public function index()
 	{
 		// Seta título da página
-		$data['title'] = 'Simulador BlackHole .:. Créditos';
+		$data['title'] = 'Singularidade .:. Créditos';
 		
 		// Carrega layout base e conteúdo da page Créditos
 		$data['content'] = $this->load->view ('creditos/index', '', true);
