@@ -1,4 +1,4 @@
-<div class="col-md-8 col-sm-12 col-xs-8 margin-0 padding-0" id="container">
+<div class="col-md-8 col-sm-12 col-xs-12 margin-0 padding-0" id="container">
 
 	<div class="col-md-12 col-sm-12 col-xs-12 margin-0 padding-0" id="massa-estrela-home">
 		<div class="row col-md-12 col-sm-12 col-xs-12 margin-0 padding-0" id="conteiner-estrela-home">
@@ -16,8 +16,8 @@
 					</label>
 					<input type="text" class="integer form-control" name="massa_estrela" id="massa_estrela" value="" />
 				</div>
-		
-				<div class="form-group col-md-12">
+
+				<div class="form-group col-md-12 col-sm-12 col-xs-12">
 					<input type="button" value="COMEÇAR" id="btn_comecar" name="btn_comecar" class="col-md-12 btn button btn-lg" />
 				</div>
 			</form>

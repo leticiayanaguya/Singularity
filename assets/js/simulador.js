@@ -24,28 +24,51 @@ $(document).ready(function ()
 });
 
 
-
+function mock(){}
 function set_gigante_vermelha(massa_estrela) 
 {
 	console.log('Gigante vermelha');
-	$('#estrela').earth3d('destroy');
-	$('#estrela').replaceWith($('<canvas id="estrela" width="500" height="500"></canvas>'));
+	
 
 	// Começa a troca de estágios da estrela
 	// Gigante vermelha
-	$('#estrela').earth3d( 
-	{
-	  texture: 'assets/images/estrelas/gigante_vermelha.jpg', // Textura usada na estrela
-	});
+	
+	setTimeout(function (){
+		$('#estrela').earth3d('destroy');
+		$('#estrela').replaceWith($('<canvas id="estrela" width="500" height="500"></canvas>'));
+		$('#estrela').earth3d( 
+		{
+		  texture: 'assets/images/estrelas/gigante_vermelha.jpg', // Textura usada na estrela
+		});
+    }, 5000);
+	
 	
 	if(massa_estrela < 5) 
 	{ // Anã branca
-		setInterval(set_ana_branca(massa_estrela), 5000);
+		setTimeout(function (){
+			$('#estrela').earth3d('destroy');
+			$('#estrela').replaceWith($('<canvas id="estrela" width="400" height="400"></canvas>'));
+			$('#estrela').earth3d( 
+			{
+			  texture: 'assets/images/estrelas/ana_branca.jpg', // Textura usada na estrela
+			});
+	    }, 5000);
 	} 
 	else if(massa_estrela >= 5) 
 	{// Supernova
-		setInterval(set_super_nova(massa_estrela), 5000);
+		setTimeout(function (){
+			//$('#estrela').earth3d('destroy');
+			//$('#estrela').replaceWith($('<canvas id="estrela" width="400" height="400"></canvas>'));
+			 $( "#estrela" ).effect( "size", {
+				    to: { width: 350, height: 350 }
+				  }, 3000 );
+			$('#estrela').earth3d( 
+			{
+			  texture: 'assets/images/estrelas/supernova.jpg', // Textura usada na estrela
+			});
+	    }, 10000);
 	}
+	
 }
 
 function set_ana_branca(massa_estrela) 

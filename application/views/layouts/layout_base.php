@@ -73,7 +73,6 @@
 		<?php echo $content;?>
 	</body>
 
-    <script type="text/javascript" src="assets/js/requestanimationframe.polyfill.js"></script>
     <script type="text/javascript" src="assets/js/jquery-ui.min.js"></script>
     <script type="text/javascript" src="assets/js/sphere-hacked.js"></script>
     <script type="text/javascript" src="assets/js/jquery.earth-3d.js"></script>
