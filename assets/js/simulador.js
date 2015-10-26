@@ -17,48 +17,45 @@ $(document).ready(function ()
 		if(massa_estrela != '') 
 		{
 			$('#form_entrada_massa_estrela').fadeOut(); // Esconde entrada de valor da massa
-
-			setInterval(set_gigante_vermelha(massa_estrela), 5000);
+			set_gigante_vermelha(massa_estrela);
 		}
 	});
 });
 
 
-function mock(){}
 function set_gigante_vermelha(massa_estrela) 
 {
-	console.log('Gigante vermelha');
-	
-
 	// Começa a troca de estágios da estrela
 	// Gigante vermelha
 	
 	setTimeout(function (){
-		$('#estrela').earth3d('destroy');
-		$('#estrela').replaceWith($('<canvas id="estrela" width="500" height="500"></canvas>'));
+		 $( "#estrela" ).effect( "size", {
+			    to: { width: 500, height: 500 }
+			  }, 3000 );
 		$('#estrela').earth3d( 
 		{
 		  texture: 'assets/images/estrelas/gigante_vermelha.jpg', // Textura usada na estrela
-		});
-    }, 5000);
+		}).css( 'box-shadow', '0px 0px 10px 10px #F00' );
+		console.log('Gigante vermelha');
+   }, 5000);
 	
 	
 	if(massa_estrela < 5) 
 	{ // Anã branca
 		setTimeout(function (){
-			$('#estrela').earth3d('destroy');
-			$('#estrela').replaceWith($('<canvas id="estrela" width="400" height="400"></canvas>'));
+			 $( "#estrela" ).effect( "size", {
+				    to: { width: 350, height: 350 }
+				  }, 3000 );
 			$('#estrela').earth3d( 
 			{
 			  texture: 'assets/images/estrelas/ana_branca.jpg', // Textura usada na estrela
 			});
-	    }, 5000);
+			console.log('Anã branca');
+	    }, 10000);
 	} 
 	else if(massa_estrela >= 5) 
 	{// Supernova
 		setTimeout(function (){
-			//$('#estrela').earth3d('destroy');
-			//$('#estrela').replaceWith($('<canvas id="estrela" width="400" height="400"></canvas>'));
 			 $( "#estrela" ).effect( "size", {
 				    to: { width: 350, height: 350 }
 				  }, 3000 );
@@ -66,44 +63,12 @@ function set_gigante_vermelha(massa_estrela)
 			{
 			  texture: 'assets/images/estrelas/supernova.jpg', // Textura usada na estrela
 			});
+			console.log('Supernova');
 	    }, 10000);
 	}
 	
 }
 
-function set_ana_branca(massa_estrela) 
-{
-	console.log('Anã branca');
-	$('#estrela').earth3d('destroy');
-	$('#estrela').replaceWith($('<canvas id="estrela" width="500" height="500"></canvas>'));
-
-	// Anã branca
-	$('#estrela').earth3d( 
-	{
-	  texture: 'assets/images/estrelas/ana_branca.jpg', // Textura usada na estrela
-	});
-}
-
-function set_super_nova(massa_estrela) 
-{
-	console.log('Supernova');
-	$('#estrela').replaceWith($('<canvas id="estrela" width="400" height="400"></canvas>'));
-
-	// Supernova
-	$('#estrela').earth3d( 
-	{
-	  texture: 'assets/images/estrelas/supernova.jpg', // Textura usada na estrela
-	});
-
-	if(massa_estrela < 2) 
-	{ // Estrela de nêutrons
-		setInterval(set_estrela_neutrons(massa_estrela), 5000);
-	} 
-	else if(massa_estrela > 2) 
-	{// Buraco negro
-		setInterval(set_buraco_negro(massa_estrela), 5000);
-	}
-}
 
 function set_estrela_neutrons(massa_estrela) 
 {

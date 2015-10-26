@@ -1,3 +1,12 @@
+
+#glow-shadows {
+    background: rgba(0, 0, 0, 0) url("../images/estrelas/earth-glow-shadows.png") repeat scroll 0 0;
+    height: 400px;
+    position: absolute;
+    top: 1px;
+    width: 400px;
+}
+
 .nav-side-menu {
 	background-color: #2E353D;
 	color: #E1FFFF;
