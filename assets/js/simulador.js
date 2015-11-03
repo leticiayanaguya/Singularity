@@ -35,7 +35,7 @@ function set_gigante_vermelha(massa_estrela)
 		$('#estrela').earth3d( 
 		{
 		  texture: 'assets/images/estrelas/gigante_vermelha.jpg', // Textura usada na estrela
-		}).css( 'box-shadow', '0px 0px 10px 10px #F00' );
+		});
 		console.log('Gigante vermelha');
    }, 5000);
 	
