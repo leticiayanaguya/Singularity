@@ -27,6 +27,7 @@ class Home extends CI_Controller
 		// Carrega layout base e conteúdo da homepage
 		$data['content'] = $this->load->view ('home/index', '', true);
 		$this->load->vars ($data);
+
 		$this->load->view ('layouts/layout_base');
 	}
 

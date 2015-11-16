@@ -7,8 +7,8 @@
 	          <div id="glow-shadows" class="earth"></div>
 	        </div>
 		</div>
-		
-		<div class="row col-md-12 col-sm-12 col-xs-12" id="form_entrada_massa_estrela">
+
+		<div class="col-md-12 col-sm-12 col-xs-12" id="form_entrada_massa_estrela">
 			<form role="form">
 				<div class="form-group col-md-12">
 					<label class="col-md-12 control-label" for="massa_estrela">
